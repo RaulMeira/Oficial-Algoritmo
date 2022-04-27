@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    login: <input type="text" id="login">
+    <br><br>
+    senha: <input type="text" id="senha">
+    <br><br>
+    <button onclick="entrar()">Entrar</button>
+    <br><br>
+    <span id="mostrar"></span>
+
+</body>
+</html>
+
+<script>
+    function entrar() {
+        var loginOK = login.value == 'aidimin'
+        var senhaOK = senha.value == 'seinha'
+
+        if (loginOK && senhaOK) {
+            mostrar.innerHTML = `Usuário autenticado com sucesso`
+        }
+        if (loginOK == false) {
+            mostrar.innerHTML = `Seu login esta invalido`
+        }
+        if (senhaOK == false) {
+            mostrar.innerHTML = `Seu senha esta invalido`
+        }
+    }
+
+</script>

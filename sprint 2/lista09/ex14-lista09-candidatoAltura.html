@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura-candidato</title>
+</head>
+
+<body>
+    <span style="display: block;" id="inicio">
+        Intervalo da altura desejada para os próximos pilotos:
+        <input type="text" id="altPilotoinicial" placeholder="altura inicial">
+        <input type="text" id="altPilotofinal" placeholder="altura final">
+        <br><br>
+        Intervalo da altura desejada para os próximos jogadores:
+        <input type="text" id="altJogadorinicial" placeholder="altura inicial">
+        <input type="text" id="altJogadorfinal" placeholder="altura final">
+    </span>
+    <span style="display: none;" id="selec">
+        <h1>Processo de Seleção de novos atletas</h1>
+        Critério de Seleção de piloto – altura entre <span id="iniciopiloto"></span> até <span id="finalpiloto"></span>
+        <br><br>
+        Critério de Seleção de jogador de basquete – altura entre <span id="iniciojogador"></span> até <span id="finaljogador"></span>
+        <br><br>
+        Qual seu nome: 
+        <input type="text" id="nomeCand" placeholder="nome">
+        <br><br>
+        Qual a sua altura
+        <input type="text" id="alturaCand" placeholder="altura">
+        <br><br>
+        <select name="" id="modalidade" onchange="resultado()">
+            <option value="0">Selecionar</option>
+            <option value="piloto">Piloto</option>
+            <option value="jogador">Jogador de basquete</option>
+        </select>  
+        <br> <br>
+        <span id="mostrar"></span>     
+    </span>
+    <br><br>
+    <button onclick="selecionar()">Selecionar</button>
+    <br><br> 
+</body>
+
+</html>
+
+<script>
+    
+    function selecionar() {
+        inicio.style.display = "none"
+        selec.style.display = "block"
+        
+        var altPilotoini = Number(altPilotoinicial.value)
+        var altPilotofim = Number(altPilotofinal.value)
+        finalpiloto.innerHTML = `${altPilotofim.toFixed(2)}`
+        iniciopiloto.innerHTML = `${altPilotoini.toFixed(2)}`
+        
+        if (altPilotoini < 1) {
+            alert (`ERRO NOS VALORES`)
+            inicio.style.display = "none"
+            selec.style.display = "none"
+        }
+        if (altPilotofim < altPilotoini) {
+            alert (`ERRO NOS VALORES`)
+            inicio.style.display = "none"
+            selec.style.display = "none"
+        }
+
+        var altJogadorini = Number(altJogadorinicial.value)
+        var altJogadorfim = Number(altJogadorfinal.value)
+        finaljogador.innerHTML = `${altJogadorfim.toFixed(2)}`
+        iniciojogador.innerHTML = `${altJogadorini.toFixed(2)}`
+        if (altJogadorini < 1.5) {
+            alert (`ERRO NOS VALORES`)
+            inicio.style.display = "none"
+            selec.style.display = "none"
+        }
+        if (altJogadorfim < altJogadorini) {
+            alert (`ERRO NOS VALORES`)
+            inicio.style.display = "none"
+            selec.style.display = "none"
+        }
+    }
+    function resultado() {  
+        var altPilotoini = Number(altPilotoinicial.value)
+        var altPilotofim = Number(altPilotofinal.value)
+        console.log("teste")
+        var altJogadorini = Number(altJogadorinicial.value)
+        var altJogadorfim = Number(altJogadorfinal.value)
+        var mod = modalidade.value
+        var nome = nomeCand.value
+        var altura = alturaCand.value
+        if (mod == '0') {
+            inicio.style.display = "none"
+            selec.style.display = "none"
+        }
+        if (mod == 'piloto') {
+            if (altura <= altPilotofim  && altura >= altPilotoini) {
+                mostrar.innerHTML = `O candidato ${nome} com altura de ${altura} participará do processo de seleção de piloto`
+            }
+            else{
+                mostrar.innerHTML = `Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos`
+            }
+        }
+        else{
+            if (altura <= altJogadorfim  && altura >= altJogadorini) {
+                mostrar.innerHTML = `O candidato ${nome} com altura de ${altura} participará do processo de seleção de piloto`
+            }
+            else{
+                mostrar.innerHTML = `Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos`
+            }
+        }   
+    }         
+    
+</script>

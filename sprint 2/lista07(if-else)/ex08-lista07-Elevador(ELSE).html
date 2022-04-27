@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevador</title>
+</head>
+<body>
+    <h1>ELEVADOR DA SPTECH</h1>
+    Quantidade de homens no elevador: 
+    <input type="text" id="macho">
+    <br><br>
+    Quantidade de mulheres no elevador:
+    <input type="text" id="femea">
+    <br><br>
+    <button onclick="ligar()">Ligar elevador</button>
+    <br><br>
+    <span id="mostrar"></span>
+    
+</body>
+</html>
+
+<script>
+    function ligar() {
+        var pesoMacho = Number(macho.value) * 90
+        var pesoMuie = Number(femea.value) * 70
+        var pesoTot = pesoMacho + pesoMuie
+        var falta = pesoTot - 500
+        mostrar.innerHTML += `O elevador esta pesando ${pesoTot}kg <br>`
+        if (pesoTot < 500) {
+            mostrar.innerHTML += `<span style="color: green;">O Elevador vai se mover, 
+                pois esta com ${pesoTot}kg</span> <br><br>`
+        }
+        else {
+            mostrar.innerHTML += `<span style="color: red;">Alguém precisa descer. Precisa
+                perder ${falta}kg para mover o elevador</span><br><br>`
+        }
+
+    }
+
+</script>
+
+   

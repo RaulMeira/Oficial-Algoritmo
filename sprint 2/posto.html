@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posto</title>
+</head>
+
+<body>
+    <h2>Posto Estrela - Controle de Vendas</h2>
+
+    <div id="div_abertura" style="display: block;">
+        <h3>------------------Abertura do Posto------------------</h3>
+        Entre com o volume de Etanol do tanque:
+        <input id="ipt_etanol"> <br>
+        Entre com o volume de Gasolina do tanque:
+        <input id="ipt_gasolina"> <br>
+        <button onclick="abrir()">Abrir o Posto</button> <br>
+        <div id="div_msg_abertura"></div>
+    </div>
+
+    <div id="div_venda" style="display: none;">
+        <h3>-------Registro das Operações de venda do turno--------</h3>
+        Entre com o volume vendido:
+        <input id="ipt_venda">
+        Informe o produto vendido:
+        <select id="sel_produto">
+            <option value="s">--Selecione--</option>
+            <option value="e">etanol</option>
+            <option value="g">gasolina</option>
+        </select>
+        <button onclick="registrar()">Registrar a Venda</button>
+        <button onclick="encerrar()" style="background-color: red;">Encerrar o Turno</button>
+        <br><br>
+        <span id="span_msg"></span>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function abrir() {
+        var iptEtanol = Number(ipt_etanol.value);
+        var iptGasosa = Number(ipt_gasolina.value);
+
+        if (iptEtanol < 300) {
+            div_msg_abertura.innerHTML += `ERRO - Com esse volume de Etanol não dá para abrir o posto <br>`
+        }
+        if (iptGasosa < 200) {
+            div_msg_abertura.innerHTML += `ERRO - Com esse volume de Gasolina não dá para abrir o posto <br>`
+        }
+        else {
+            if (300 <= iptEtanol <= 3000) {
+                div_msg_abertura.innerHTML += `AVISO - Chame o reabastecimento de Etanol <br>`
+
+            }
+            if (200 <= iptGasosa <= 2000) {
+                div_msg_abertura.innerHTML += `AVISO - Chame o reabastecimento de Gasolina <br>`
+            }
+            div_abertura.style.display = 'none'    
+            div_venda.style.display = 'block'  
+            if (iptGasosa > 2000 || iptEtanol > 3000) {        
+                div_abertura.style.display = 'none'
+                div_venda.style.display = 'block'
+            }
+
+        }
+
+    }
+
+    var qntd_vendas = 0
+    function registrar() {
+        qntd_vendas += 1
+        var vendas = Number(ipt_venda.value);
+        var produto = sel_produto.value;
+        var saldo = 0
+        var etanol = ipt_etanol.value
+        var gasosa = ipt_gasolina.value
+
+        if (produto == 'e') {
+            saldo = etanol - vendas
+            span_msg.innerHTML = `Com a venda de ${vendas.toFixed(1)} de etanol o saldo no tanque é de ${saldo.toFixed(1)}`
+        }
+        if (produto == 'g') {
+            saldo = gasosa - vendas
+            span_msg.innerHTML = `Com a venda de ${vendas.toFixed(1)} de gasolina o saldo no tanque é de ${saldo.toFixed(1)}`
+        }
+        if (saldo < 0) {
+            alert("SALDO NEGATIVO")
+        }
+    }
+
+    function encerrar() {
+
+        var produto = sel_produto.value;
+        var etanol = ipt_etanol.value
+        var gasosa = ipt_gasolina.value
+        if (produto == 'e') {
+            var vendasEtanol = Number(ipt_venda.value)
+            var saldoEtanol = etanol - vendasEtanol
+            var mediaEtanol = vendasEtanol / qntd_vendas
+        }
+        if (produto == 'g') {
+            var vendasGasosa = Number(ipt_venda.value)
+            var saldoGasosa = gasosa - vendasGasosa
+            var mediaGasosa = vendasGasosa / qntd_vendas
+        }
+        var vendasEtanol = Number(ipt_venda.value)
+        var saldoEtanol = etanol - vendasEtanol
+        var mediaEtanol = vendasEtanol / qntd_vendas
+        var vendasGasosa = Number(ipt_venda.value)
+        var saldoGasosa = gasosa - vendasGasosa
+        var mediaGasosa = vendasGasosa / qntd_vendas
+        if (gasosa > 1000 && etanol > 1500 || saldoEtanol < 300 && saldoGasosa < 300) {
+            var final = 'bom'
+        }
+        else {
+            var final = 'normal'
+        }
+
+        span_msg.innerHTML = `Venda de Etanol <br> 
+                              Saldo de produto no tanque = ${saldoEtanol} <br>
+                              Volume total vendido = ${vendasEtanol} <br>
+                              Quantidade de vendas = ${qntd_vendas} <br>
+                              Média das vendas = ${mediaEtanol} <br> <br>
+                              
+                              Venda de Gasolina <br>
+                              Saldo de produto no tanque = ${saldoGasosa} <br>
+                              Volume total vendido = ${vendasGasosa} <br>
+                              Quantidade de vendas = ${qntd_vendas} <br>
+                              Média das vendas = ${mediaGasosa} <br><br>
+                
+                              O turno hoje foi ${final}`
+    }
+
+</script>

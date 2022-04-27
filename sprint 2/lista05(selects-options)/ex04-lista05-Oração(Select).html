@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oração</title>
+</head>
+<body>
+<h1>ORAÇÃO</h1>
+Onde houver:
+<select id="onde">
+    <option value="amor">ódio</option>
+    <option value="esperança">Inveja</option>
+    <option value="coisas boas">coisas ruins</option>
+    <option value="alegria">sofrimento</option>
+</select>
+<br><br>
+<button onclick="botao()">Parte boa</button>
+</body>
+</html>
+<script>
+    function botao() {
+        alert (`Que eu leve ${onde.value}`)
+    }
+</script>

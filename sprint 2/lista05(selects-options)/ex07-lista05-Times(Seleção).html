@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>TIEMS GRANDES DE SÃO PAULO</h1>
+    <select id="times">
+        <option value="https://www.palmeiras.com.br/wp-content/themes/foursys-palmeiras/assets/images/logo-palmeiras.png ">PALMEIRAS</option>
+        <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaHTA4go3qwJyM7NjkIK2aPbhbIWyeIhB7RWchacfeB0G80d_98mIpkGp2z1BE76gIpVw&usqp=CAU">Santos</option>
+        <option value="https://a.espncdn.com/i/teamlogos/soccer/500/2026.png">São Paulo</option>
+        <option value="https://upload.wikimedia.org/wikipedia/pt/9/9e/RedBullBragantino.png">Red Bull Bragantino</option>
+    </select>
+    <br><br>
+    <button onclick="ver()">Ver escudo</button>
+    <br><br>
+    
+    <img src="" id="fototime" style="width: 200px;">
+</body>
+
+</html>
+
+<script>
+    function ver() {
+        fototime.src = times.value
+    }
+
+</script>
+

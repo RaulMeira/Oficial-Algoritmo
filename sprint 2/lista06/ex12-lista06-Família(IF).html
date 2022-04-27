@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familia</title>
+</head>
+<body>
+    Quantidade de filhos:
+    <input id="qntd">
+    <br><br>
+    <button onclick="analise()">Analisar família</button>
+<br><br>
+<span id="mostrar"></span>
+</body>
+</html>
+<script>
+    function analise() {
+        var qtsFios = qntd.value
+        if (qtsFios >= 1) {
+            mostrar.innerHTML +=`Não tem TV <br>`
+        }
+        if (qtsFios >= 2) {
+            mostrar.innerHTML +=`Não tem internet<br>`
+        }
+        if (qtsFios >= 3) {
+            mostrar.innerHTML +=`Não tem video game<br>`
+        }
+        if (qtsFios >= 4) {
+            mostrar.innerHTML +=`Não tem Netflix<br>`
+        }
+    }
+
+</script>

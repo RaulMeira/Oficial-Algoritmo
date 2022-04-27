@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento</title>
+</head>
+
+<body>
+    <h3>Minissistema de avaliação de atendimento </h3>
+
+    <h1>COMO ESTA O MEU ATENDIMENTO?</h1>
+    <select id="estrelas">
+        <option value="1">1 estrela</option>
+        <option value="2">2 estrelas</option>
+        <option value="3">3 estrelas</option>
+        <option value="4">4 estrelas</option>
+        <option value="5">5 estrelas</option>
+    </select>
+    <br><br>
+    Média atual: <span id="media">0</span> estrelas
+    <br><br>
+    Número de avaliações: <span id="avaliacao">0</span>
+    <br><br>
+    <button onclick="conf()">Confirmar avaliação</button>
+</body>
+
+</html>
+<script>
+    var cliques = 0
+    var mediafinal = 0
+
+    function conf() {
+        cliques += 1
+        mediafinal += Number(estrelas.value)
+        media.innerHTML = mediafinal / cliques
+        avaliacao.innerHTML = cliques
+    }
+</script>

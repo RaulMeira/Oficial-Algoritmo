@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercearia</title>
+</head>
+
+<body>
+    <h1>MERCEARIA RAUL</h1>
+    Opções de produtos:
+    <select id="combo">
+        <option value="2.50">Leite</option>
+        <option value="0.25">Pão</option>
+        <option value="2.00">Bolacha</option>
+        <option value="3.00">Salgadinho</option>
+        <br><br>
+    
+    </select>
+    <br><br>
+    <button onclick="preco()">Ver preço</button>
+
+</body>
+
+</html>
+
+<script>
+    function preco() {
+        alert(`Isso custa R$${Number(combo.value).toFixed(2)}`)
+    }
+</script>

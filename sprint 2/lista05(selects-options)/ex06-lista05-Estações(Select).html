@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estações</title>
+</head>
+<body>
+    <h1>Estações do ano</h1>
+
+    <select id="estacao" onchange="ver()">
+    <option value="https://s2.static.brasilescola.uol.com.br/img/2019/09/primavera.jpg">Primavera</option>
+    <option value="https://cdn.abcdoabc.com.br/verao_5508634b.jpg">Verão</option>
+    <option value="https://s3.static.brasilescola.uol.com.br/be/2021/03/outono.jpg">Outono</option>
+    <option value="https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020inverno-datas-e-caracteristicas.jpg">Inverno</option>
+    
+    </select>
+    <br><br>
+    <img src="" id="foto_estacao" style="width: 200px;">
+</body>
+</html>
+<script>
+    function ver() {
+        foto_estacao.src = estacao.value
+    }
+
+</script>
+ 

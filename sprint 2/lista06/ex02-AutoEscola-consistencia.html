@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>AutoEscola</h1>
+    Nome:
+    <input type="text" placeholder="insira seu nome" id="nome_al">
+    <br>
+    Idade:
+    <input type="text" placeholder="insira sua idade" id="idade_al">
+    <br>
+    <button onclick="cadastro()">Cadastrar</button>
+    <br>
+    <span id="mostrar"></span>
+    <br><br>
+    <span id="mostrar2"></span>
+</body>
+
+</html>
+
+<script>
+    function cadastro() {
+        var nome = nome_al.value
+        var idade = idade_al.value
+        if (nome == '', idade <= 0) {
+            mostrar.innerHTML = `Nome invalido <br> Idade invalido`
+        }
+        else {
+            if (idade > 80) {
+            mostrar.innerHTML = `Procurar escola especial`
+        }
+            mostrar2.innerHTML = `Olá ${nome}, voce tem ${idade} anos`
+            if (idade < 18) {
+                var falta = 18 - idade
+                mostrar2.innerHTML = `Este aluno tem que aguardar ${falta} anos para tirar a CNH`
+            }
+
+        }
+    }
+
+</script>

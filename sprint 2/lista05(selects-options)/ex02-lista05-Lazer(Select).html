@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazer</title>
+</head>
+<body>
+    Lugar de Lazer:
+    <select id="lazer">
+        <option value="Assistir o filme Marley e Eu">Cinema</option>
+        <option value="Assistir a peça O Fantasma da Ópera">Teatro</option>
+        <option value="Ir ao parque Hopi Hari">Parque</option>
+        <option value="Ouvir o show da  Lady Gaga">Show</option>
+
+    </select>
+    <br><br>
+    <button onclick="ver()">VER ATRAÇÃO</button>
+    <br><br>
+    <span id="mostrar"></span>
+</body>
+</html>
+<script>
+    function ver() {
+        mostrar.innerHTML = `Hoje vamos fazer uma coisa muito legal, que é: ${lazer.value}`
+    }
+
+</script>
+
+

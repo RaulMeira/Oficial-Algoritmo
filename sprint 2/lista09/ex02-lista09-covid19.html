@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid19</title>
+</head>
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url("https://www.lance.com.br/files/article_main/uploads/2022/03/20/62378471c5998.jpeg");
+        background-repeat: no-repeat;
+        background-position: absolute;
+        background-size: cover;
+    }
+</style>
+<body>
+    <h1>COVID 19</h1>
+    renda:
+    <input type="text" id="renda">
+    <br>
+    renda total familia:
+    <input type="text" id="rendaFam">
+    <br>
+    <button onclick="verificar()">Verficar ajuda</button>
+
+</body>
+</html>
+
+<script>
+    function verificar() {
+        var usuario = Number(renda.value)
+        var familia = Number(rendaFam.value)
+
+        if (usuario <= 1050 && familia <= 2100) {
+            alert (`Voce terá direito`)
+        }
+        else{
+            alert (`Voce NÃO terá direito`)
+        }
+
+    }
+
+</script>

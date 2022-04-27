@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tio patinhas</title>
+</head>
+<body>
+    <h1>TIO PATINHAS</h1>
+    <span style="color: blue;">Total guardado no cofrinho: R$</span> <b id="cofre">0.00</b>
+    <br><br>
+    <span style="color: blue;">Depositos efetuados:</span> <b id="dep">0</b>
+    <br><br>
+    <button onclick="cinquenta()"> <img src="https://i.ucoin.net/coin/17/658/17658870-2/brazil-50-centavos-2000.jpg" 
+        alt="" style="height: 100px;"></button>
+    <br><br>
+    <button onclick="dois()"><img src="https://www.bcb.gov.br/novasnotas/assets/img/section/2/2_back.jpg" 
+        alt="" style="height: 100px;"></button>
+    <br><br>
+    <div style="background-color: black; height: 20px;"></div>
+    <br><br>
+    <button onclick="total()">TOTAL GUARDADO:</button>
+    <span id="tot"></span>
+</body>
+</html>
+
+<script>
+    var ax_cofre = 0
+    var deposito = 0
+
+    function cinquenta() {
+        ax_cofre += 0.50
+        deposito += 1
+        cofre.innerHTML = ax_cofre
+        dep.innerHTML = deposito
+    }
+    function dois() {
+        ax_cofre += 2.00
+        deposito += 1
+        cofre.innerHTML = ax_cofre
+        dep.innerHTML = deposito
+    }
+    function total() {
+        tot.innerHTML = `O Total guardado foi de: R$${ax_cofre.toFixed(2)}`
+
+    }
+</script>

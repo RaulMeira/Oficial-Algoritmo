@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor guardado: R$ <span id="dinheiro">0.00</span>
+    <br><br>
+    <button onclick="guardar()">Guardar R$5,00</button>
+    <button onclick="gastar()">Gastar R$10,00</button>
+    <br><br>
+    <span id="mostrar"></span>
+
+</body>
+</html>
+
+<script>
+    var total = 0
+
+    function guardar() {
+        total += 5
+        dinheiro.innerHTML = `${total}`
+        if (total >= 0) {
+            mostrar.innerHTML = `Finanças OK`
+        }
+        if (total > 100) {
+            mostrar.innerHTML += `<br>#ostentação`
+        }
+    }
+    function gastar() {
+        total -= 10
+        dinheiro.innerHTML = `${total}`
+        if (total < 0) {
+            mostrar.innerHTML = `Finanças OK`
+        }
+    }
+</script>
+
+
+e) Quando o valor guardado for menor que 0, exiba abaixo da frase de a) a frase, na cor vermelha, Finanças em perigo!
+f) Caso o valor guardado seja menor que -20, exiba abaixo da frase de e) a frase Quase um Corinthians!

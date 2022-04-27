@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arroz</title>
+</head>
+
+<body>
+    <h2>ARROZ</h2>
+    Tipo de arroz usado:
+    <select name="" id="select">
+        <option value="0">-- selecionar --</option>
+        <option value="integral">integral</option>
+        <option value="branco">branco</option>
+    </select>
+    <br><br>
+    tempo de cozimento:
+    <input type="text" id="cozinhaa" placeholder="em minutos">
+    <br>
+    quantidade de sal usada:
+    <input type="text" id="sall" placeholder="em gramas">
+    <br><br>
+    <button onclick="avaliar()">Avaliar arroz</button>
+    <br><br>
+    <span id="mostrar"></span>
+</body>
+
+</html>
+
+<script>
+    function avaliar() {
+        var esc = select.value
+        var sal = Number(sall.value)
+        var cozinha = Number(cozinhaa.value)
+        if (esc = '0') {
+            alert('selecione um valor')
+        }
+        if (esc == 'branco' && cozinha == 10 && sal < 10 || esc == 'integral' && cozinha == 20 && sal < 15) {
+            mostrar.innerHTML = `Arroz perfeito`
+        }
+        else {
+            mostrar.innerHTML = `Seu arroz não está perfeito`
+        }
+    }
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex19</title>
+</head>
+
+<body>
+    <span id="tudo" style="display: block;">
+        <h1>BANCO MELETE</h1>
+        Login:
+        <input type="text" id="login">
+        Senha:
+        <input type="text" id="senha">
+        Informação pessoal:
+        <input type="text" id="informação">
+        <br><br>
+        <button onclick="autenticar()">Autenticar</button>
+        <br><br>
+    </span>
+    <span id="mostrar" style="display: none;"></span>
+
+    <br><br>
+    <span id="aut" style="display: none;">Você ainda tem <span id="tentativa">3</span> tentativa(s)</span>
+    <br>
+    <span id="resultado"></span>
+
+</body>
+
+</html>
+
+<script>
+    var tent = 3
+    function autenticar() {
+        var l = login.value
+        var s = senha.value
+        var inf = informação.value
+        tent -= 1
+        if (l == 'ana' && s == 'braga' && inf == '1960' || inf == 'louro josé') {
+            mostrar.style.display = 'block'
+            mostrar.innerHTML = `Usuário autenticado`
+            aut.style.display = `none`
+            tudo.style.display = 'none'
+            tent = 3
+
+        }
+        else {
+            mostrar.innerHTML = `Falha na autenticação`
+            aut.style.display = `block`
+            tentativa.innerHTML = `${tent}`
+            if (tent == 0) {
+                resultado.innerHTML = `Usuário BLOQUEADO! Procure seu gerente!`
+                tudo.style.display = 'none'
+                aut.style.display = `none`
+                mostrar.style.display = 'block'
+
+            }
+        }
+    }
+
+</script>

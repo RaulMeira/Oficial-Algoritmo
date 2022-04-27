@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boolean-ou</title>
+</head>
+
+<body>
+    <h3>Analise de Aprovação dos Alunos</h3>
+
+    Média: <input type="text" id="mediaa"> <br><br>
+    Frequencia: <input type="text" id="frequencia"> <br><br>
+    <button onclick="analisar()">Analisar</button>
+
+</body>
+
+</html>
+
+<script>
+    // VARIAVEIS BOOLEANAS = true or false
+    // true se a condição da variael for verdadeira
+    // false se a condição da var for falsa
+
+    function analisar() {
+        var mediaRUIM = mediaa.value < 6;
+        var freqRUIM = frequencia.value < 75;
+
+        if (mediaRUIM || freqRUIM) {
+            alert(`APROVADO`)
+        } 
+        else {
+            alert('REPROVADO')
+        }
+    }
+
+</script>

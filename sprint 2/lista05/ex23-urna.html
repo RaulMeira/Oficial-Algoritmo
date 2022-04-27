@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex23</title>
+</head>
+
+<body>
+    <h1>MELHOR CANTOR DO MUNDO!!!!</h1>
+    <button onclick="bieber()"><img src="https://www.vagalume.com.br/justin-bieber/images/justin-bieber.jpg" alt=""
+            style="height: 150px;"></button> Votos:<span id="justin">0</span>
+    <br><br>
+
+    <button onclick="styles()"><img
+            src="https://studiosol-a.akamaihd.net/uploadfile/letras/fotos/e/f/8/a/ef8a0cb94166d9830af93aad8092fbe5.jpg"
+            alt="" style="height: 150px;"></button> Votos: <span id="harry">0</span>
+    <br><br>
+
+    Total de votos: <span id="votos">0</span>
+    <br><br>
+    <button onclick="acabou()">Encerrar a votação!!!</button>
+    <br> <br>
+    <div style="background-color: black; height: 20px;"></div>
+    <br><br>
+    <span id="vencedor"></span>
+
+</body>
+
+</html>
+<script>
+    var justvoto = 0
+    var stylesvoto = 0
+    var totvoto = 0
+    function bieber() {
+        justvoto += 1
+        justin.innerHTML = `<b>${justvoto}</b>`
+        totvoto += 1
+        votos.innerHTML = `<b>${totvoto}</b>`
+    }
+    function styles() {
+        stylesvoto += 1
+        harry.innerHTML = `<b>${stylesvoto}</b>`
+        totvoto += 1
+        votos.innerHTML = `<b>${totvoto}</b>`
+    }
+    function acabou() {
+        vencedor.innerHTML = `E o vencedor foi: <b>JUSTIN BIEBER</b> com ${justvoto} votos!!!<br> <br>
+        <img src="https://www.vagalume.com.br/justin-bieber/images/justin-bieber.jpg" 
+        alt="" style="height: 150px;"">`
+    }
+
+</script>

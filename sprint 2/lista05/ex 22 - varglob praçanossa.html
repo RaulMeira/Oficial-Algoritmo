@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex22</title>
+</head>
+<body>
+    <button onclick="praca()">Votos na praça é nossa:</button> <span id="v_praca">0</span>
+    <br><br>
+    <button onclick="zorra()">Votos na Zorra total: </button> <span id="v_zorra">0</span>
+    <br><br>
+    Total de votos: <span id="total">0</span>
+</body>
+</html>
+
+<script>
+    var totvoto = 0
+    var pracavoto = 0
+    var zorravoto = 0
+    function praca() {
+        pracavoto += 1
+        v_praca.innerHTML = pracavoto
+        totvoto += 1
+        total.innerHTML = totvoto
+    }
+    function zorra() {
+        zorravoto += 1
+        v_zorra.innerHTML = zorravoto
+        totvoto += 1
+        total.innerHTML = totvoto
+    }
+
+</script> 
+

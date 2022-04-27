@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> MÉDIA E FREQUENCIA ALUNO SPTECH</h1>
+    Média:
+    <input type="text" id="media">
+    <br>
+    Frequencia:
+    <input type="text" id="frequencia">
+    <br>
+    <button onclick="aprovar()">Passou ou não</button>
+</body>
+</html>
+
+<script>
+    function aprovar() {
+        var totmedia = Number(media.value)
+        var totfrequencia = Number(frequencia.value)
+        if (totmedia >= 6 & totfrequencia >= 75) {
+            alert (`APROVADO!!!`)
+        }
+        else {
+            alert (`REPROVADO!!`)
+        }
+    }
+
+</script>

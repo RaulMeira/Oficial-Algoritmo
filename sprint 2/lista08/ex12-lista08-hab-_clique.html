@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hab_cliques</title>
+</head>
+
+<body>
+    <h1>Avaliação de cliques</h1>
+    Voce ja clicou <span id="mostrar">0</span> vezes
+    <br>
+    <span id="frase"></span>
+    <br><br>
+    <button onclick="cliq()" style="border-radius: 5px solid green;">Clica neu</button>
+</body>
+
+</html>
+<script>
+    var clica = 0
+    function cliq() {
+        clica += 1
+        mostrar.innerHTML = clica
+        if (clica <= 5) {
+            frase.innerHTML = ` fraquinho, hein`
+        }
+        else {
+            if (clica > 5, clica <= 10) {
+                frase.innerHTML = `Dedo bom, mano`
+            }
+            else {
+                if (clica > 10, clica < 15) {
+                    frase.innerHTML = `Gosta de clicar, hein!`
+                }
+                else {
+                    if (clica > 15) {
+                        frase.innerHTML = `Eita dedo nervoso!`
+                    }
+                }
+            }
+        }
+    }
+</script>

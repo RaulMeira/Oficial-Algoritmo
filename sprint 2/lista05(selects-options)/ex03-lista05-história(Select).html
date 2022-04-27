@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórinha</title>
+</head>
+<body>
+    <h1>HISTÓRIA:</h1>
+    
+    Quando?
+    <select id="quando">
+        <option value="Uma vez...">Uma vez...</option>
+        <option value="Num belo dia..">Num belo dia..</option>
+        <option value="Numa noite chuvosa...">Numa noite chuvosa...</option>
+    </select>
+    <br> <br>
+    O que?
+<select id="oque">
+    <option value="Um peixe morreu afogado">Um peixe morreu afogado</option>
+    <option value="Um gato tomou banho">Um gato tomou banho</option>
+    <option value="Um corvo se curvou">Um corvo se curvou </option>
+
+</select>
+<br> <br>
+<button onclick="botao()">FINAL DA HISTÓRIA</button>
+
+</body>
+</html>
+<script>
+    function botao() {
+        alert (`${quando.value} ${oque.value}`)
+    }
+
+</script>

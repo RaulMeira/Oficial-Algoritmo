@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Vida do lutador: <span id="vida_lut">1000</span>
+    <br>
+    <span id="mostrar"></span>
+    <br>
+    <img src="https://images.virgula.com.br/2015/03/neymarjr1.jpg" height="200px" alt="" id="imagem">
+    <br><br>
+    <button onclick="apanhar()">Apanhar</button>
+    <button onclick="concentrar()">Concentrar força</button>
+    <br><br>
+    
+
+
+</body>
+</html>
+<script>
+    var vida = 1000
+    function apanhar() {
+        vida -= 100
+        vida_lut.innerHTML = `${vida}`
+        if (vida <= 0) {
+            mostrar.innerHTML = `Lutador já era`
+            imagem.src = "https://uploads.metropoles.com/wp-content/uploads/2020/12/19121854/Neymar-machucado.jpg"
+        }
+        else{
+            mostrar.innerHTML = `Lutador ainda vivo`
+        }
+        
+    }
+    function concentrar() {
+        vida = vida + (vida * 0.05)  
+        vida_lut.innerHTML = `${vida.toFixed(0)}`
+    }
+
+</script>
+
+

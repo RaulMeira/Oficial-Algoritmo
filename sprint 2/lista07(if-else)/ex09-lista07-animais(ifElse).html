@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animais</title>
+</head>
+
+<body>
+    Escolha uma espécie:
+    <select name="" id="especie" onchange="escolheu()">
+        <option value="0">- Escolha uma espécie -</option>
+        <option value="ov">Ovíparos</option>
+        <option value="mam">Mamíferos</option>
+    </select>
+    <br><br>
+    <select name="" id="oviparo" style="display: none;" onchange="funcaoOV()">
+        <option value="escolha">- Escolha um Ovíparo -</option>
+        <option value="ovGal">Galinha</option>
+        <option value="ov_pei">Peixe</option>
+        <option value="ov_tart">Tartaruga</option>
+    </select>
+    <br>
+    <select name="" id="mamifero" style="display: none;" onchange="funcaoMAM()">
+        <option value="escolha2">- Escolha um Mamífero -</option>
+        <option value="mam_ele">Elefante</option>
+        <option value="mam_por">Porco</option>
+        <option value="mam_coe">Coelho</option>
+    </select>
+    <br><br>
+    <img id="foto" src="" alt="" style="height: 250px;">
+    <br><br>
+
+    <input type="text" id="compra" style="display: none;" placeholder="Valor de compra do animal">
+    <br>
+    <button onclick="imposto()" style="display: none;" id="botao">Calcular imposto</button>
+    <button onclick="restart()" style="display: none" id="botao2">Restart</button>
+    <br>
+    <span id="frase"></span>
+
+</body>
+
+</html>
+<script>
+    function escolheu() {
+        if (especie.value == 'ov') {
+            oviparo.style.display = `block`;
+        }
+        if (especie.value == 'mam') {
+            mamifero.style.display = `block`
+        }
+    }
+    function funcaoOV() {
+        mamifero.style.display = 'none'
+        if (oviparo.value == 'ovGal') {
+            foto.src = "https://super.abril.com.br/wp-content/uploads/2022/01/SI_435_ORCL_Galinha-ovo_site.png";
+            compra.style.display = 'block'
+            botao.style.display = 'block'
+            botao2.style.display = 'block'
+
+        }
+        if (oviparo.value == 'ov_pei') {
+            foto.src = "https://www.infoescola.com/wp-content/uploads/2010/05/peixe-boi_692485741.jpg"
+            compra.style.display = 'block'
+            botao.style.display = 'block'
+            botao2.style.display = 'block'
+
+        }
+        if (oviparo.value == 'ov_tart') {
+            foto.src = "https://www.dicaspetz.com.br/wp-content/uploads/2020/05/como-criar-tartaruga.jpg"
+            compra.style.display = 'block'
+            botao.style.display = 'block'
+            botao2.style.display = 'block'
+
+        }
+
+    }
+    function funcaoMAM() {
+        oviparo.style.display = 'none'
+
+        if (mamifero.value == 'mam_ele') {
+            foto.src = 'https://www.infoescola.com/wp-content/uploads/2016/12/elefante-asiatico-198685685.jpg'
+            compra.style.display = 'block'
+            botao.style.display = 'block'
+            botao2.style.display = 'block'
+
+        }
+        if (mamifero.value == 'mam_por') {
+            foto.src = 'https://s2.glbimg.com/DJ9TJliDtmrx3Mm52bPXPo7NIIs=/e.glbimg.com/og/ed/f/original/2021/01/06/pexels-barbara-barbosa-4636980.jpg'
+            compra.style.display = 'block'
+            botao.style.display = 'block'
+            botao2.style.display = 'block'
+
+        }
+        if (mamifero.value == 'mam_coe') {
+            foto.src = 'https://blog.cobasi.com.br/wp-content/uploads/2021/01/mini-coelho-capa.png'
+            compra.style.display = 'block'
+            botao.style.display = 'block'
+            botao2.style.display = 'block'
+
+        }
+    }
+    
+    function imposto() {
+        var total = Number(compra.value)
+        if (especie.value == 'ov') {
+            var preco = total * 0.05
+            frase.innerHTML = `O imposto será de R$${preco}`
+        }
+        if (especie.value == 'mam') {
+            var preco = total * 0.1
+            frase.innerHTML = `O imposto será de R$${preco}`
+        }
+    }
+    function restart() {
+        var total = Number(compra.value)
+        if (especie.value == 'ov') {
+            var preco = total + (total * 0.05)
+            alert (`Valor total de todos os impostos calculados R$${preco}`)
+        }
+        if (especie.value == 'mam') {
+            var preco = total + (total * 0.1)
+            alert (`Valor total de todos os impostos calculados R$${preco}`)
+        }
+        frase.innerHTML = ``
+        foto.src = ''
+            compra.style.display = 'none'
+            botao.style.display = 'none'
+            botao2.style.display = 'none'
+    }
+</script>
+
