@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o chartJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    <!-- importando códigos -->
+
+</head>
+
+<body style="display: flex;">
+    <!-- Canvas = tela em branco pra gente desenhar -->
+    <div>
+        <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+
+    <div>
+        <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+    <!-- relative= posição relativa na tela; vh e vw = janelas de exibição-->
+</body>
+
+<script>  //   setup = preparação por grafico
+// 1 parte = tela que vamos desenhar o grafico
+// vetor label, const = forma de declarar variaveis (tipo var)
+// const = constante, qnd declara uma var constante nada que fazer depois de declarar 
+    // ela vai mudar o valor, morre dessa forma
+    const labels = [  
+      'January',   
+      'February',
+      'March',
+      'April',
+      'May', 
+      'June',
+    ];
+
+    const data = { // configurações do grafico, oq vai ter nele
+        // constante data, ela é um jason tbm
+        // dataset é vetor e jason
+        // data = dados
+        // var labels que vai asssumir o valor da constante labels (meses)
+      labels: labels, 
+      datasets: [{ // as metricas, linha do nosso grafico
+        label: 'My First dataset', // meio que o titulo do grafico, legenda
+        backgroundColor: 'rgb(255, 0, 0)', //cor da bolinha
+        borderColor: 'rgb(255, 0, 0)', //cor que liga as bolinhas
+        data: [0, 10, 5, 2, 20, 30, 45], // os dados
+        // na posição 0 do vetor data tem o valor 0
+        // na posição 1 do vetor data tem o valor 10
+        // datasets = vetor de jasons, dentro dele pode ter varias propriedades que juntas formam só 1 coisa
+        // e tbm pode ter algo que englobe tudo isso
+      }]
+    };
+  
+    const config = { // o código pega as configurações e joga no grafico
+      type: 'line', // tipos de grafico, ex: bar(barras), pie(pizza), radar(radar),....
+      data: data, //data=dados, passa valor data (de cima)
+      options: {} //sem opções, options = ver no site
+    };
+
+    const config2 = { 
+      type: 'bar', 
+      data: data, 
+      options: {} 
+    };
+  </script>
+<!--  métricas = valores; dimensoes = os meses-->
+<script> 
+    const myChart = new Chart( //criar um novo grafico
+      document.getElementById('myChart'), //pra ficar aonde tem o id myChart
+      config // com as configurações da const configu (de cima)
+    );
+
+    const myChart2 = new Chart( 
+      document.getElementById('myChart2'), 
+      config2
+    );
+  </script>
+  
+  
+</html>
