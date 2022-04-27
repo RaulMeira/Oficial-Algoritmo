@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    entre com o seu <b> primeiro nome:</b>
+    <input id="primeiro" placeholder="primeiro nome">
+    <br> <br>
+    entre com o seu <b> ultimo nome:</b>
+    <input id="ultimo" placeholder="ultimo nome">
+    <br>
+    <button onclick="incluir()"> Incluir </button>
+    <br> <br>
+    <h1>Mini Cadastro de Nome</h1>
+
+</body>
+</html>
+<script>
+    function incluir() {
+        
+   
+    alert ("seu nome é: " + primeiro.value + ' ' + ultimo.value)
+    div_men.innerHTML += primeiro.value + ' ' + ultimo.value + "<br>";
+}
+</script>

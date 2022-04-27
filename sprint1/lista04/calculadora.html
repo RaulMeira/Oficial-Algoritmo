@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+</head>
+
+<body>
+    <h1>MINHA CALCULADORA PREFERIDA!!!</h1>
+    <br><br>
+    Entre com o primeiro número:
+    <input id="primeiro">
+    <br><br>
+    Entre com o segundo número:
+    <input id="segundo">
+    <br><br>
+    <button onclick="soma()"> SOMAR</button>
+    <button onclick="vezes()"> MULTIPLICAR</button>
+    <button onclick="menos()"> SUBTRAIR</button>
+    <button onclick="dividir()"> DIVIDIR</button>
+    <button onclick="exponenciação()">EXPONENCIAÇÃO</button>
+    <button onclick="radiciação()"> RADICIAÇÃO</button>
+
+    <br><br>
+    <span id="mostrar"></span>
+</body>
+
+</html>
+<script>
+    function soma() {
+        mostrar.innerHTML += `O resultado da soma é: 
+        ${(Number (primeiro.value) + Number (segundo.value))} <br> <br>`
+    }
+    function vezes() {
+        mostrar.innerHTML += `O resultado da multiplicação é: 
+        ${primeiro.value * segundo.value} <br> <br>`
+    }
+    function menos() {
+        mostrar.innerHTML += `O resultado da subtração é: 
+        ${primeiro.value - segundo.value} <br> <br>`
+    }
+    function dividir() {
+        mostrar.innerHTML += `O resultado da divisão é: 
+        ${primeiro.value / segundo.value} <br> <br>`
+    }
+    function exponenciação() {
+        mostrar.innerHTML += `O resultado da exponenciação é: 
+        ${primeiro.value ** segundo.value} <br> <br>`
+    }
+    function radiciação() {
+        mostrar.innerHTML += `O resultado da radiciação é: 
+        ${primeiro.value ** (1 / segundo.value)} <br> <br>`
+    }
+</script>

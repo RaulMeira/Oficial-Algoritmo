@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07</title>
+</head>
+
+<body>
+    Nota que voce tirou na avaliação continuada:
+    <input id="cont">
+    <br><br>
+    Nota que voce tirou na avaliação semestral:
+    <input id="semest">
+    <br><br>
+    Qual seu nome?
+    <input id="nome_aluno">
+    <br><br>
+    <button onclick="média()">Fazer a Média</button>
+    <br><br>
+    <span id="mostrar"></span>
+
+</body>
+
+</html>
+<script>
+    function média() {
+        var nome = nome_aluno.value;
+        var total = (cont.value * (40 / 100)) + (semest.value * (60 / 100));
+        var mediafinal = total / 2;
+        mostrar.innerHTML = `A média de ${nome} é ${total}`
+    }
+
+
+</script>

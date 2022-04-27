@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input B</title>
+</head>
+<body>
+    <h2>tag input</h2>
+    Entre com o seu nome:
+    <input id="iptnome" autofocus>
+    <br>
+    <button onclick="mostrar()"> Mostrar</button>
+    <br><br>
+    A mensagem esta abaixo
+    <div id="dix_msg"></div>
+    <span style="color: green; background-color: lightblue;"></span>
+</body>
+</html>
+
+<script>
+    function mostrar () {
+        dix_msg.innerHTML += "O seu nome é: <i style='color: green;background-color: lightblue; '>" 
+        + iptnome.value + "</i>" +  ", prazer!! <br>";
+        iptnome.value = '';
+   }  
+
+</script>

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SEMAFORO</h1>
+    
+    <button onclick="pare()"> PARE</button> 
+    <button onclick="pense()"> PENSE</button> 
+    <button onclick="siga()" >SIGA</button> 
+    <br> <br>
+    <span id="span_text"> </span>
+    
+</body>
+</html>
+<script>
+    function pare() {
+        span_text.innerHTML = "<b style='background: red'> PARE </b>"
+    }
+    function pense() {
+        span_text.innerHTML = "<b style='background: yellow'> PENSE </b>"
+    }
+    function siga() {
+        span_text.innerHTML = "<b style='background: green'> SIGA </b>"
+        
+    }
+    
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bilhete</title>
+</head>
+<body>
+    Valor da passagem:
+    <input id="valor">
+    <br><br>
+    Quantas viagens voce fará por mes?
+    <input id="viagens">
+    <br><br>
+    <button onclick="economia()">VER ECONOMIA</button>
+</body>
+</html>
+<script>
+function economia() {
+    alert(`Voce economizará ${viagens.value * (valor.value / 2)}`)
+}
+
+</script>

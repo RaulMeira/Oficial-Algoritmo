@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Exemplo</h3>
+    <span id="span_text"> Tem um segredo aqui!!</span>
+    <br> <br>
+    <button onclick="testar()"> Contar um segredo</button>
+   
+    <button onclick="apagar()">Apagar</button>
+</body>
+</html>
+<script>
+    function testar() {
+        span_text.innerHTML += ' <br> O Professor <b> THIAGO </b>é o mais alto';
+    }
+    function apagar() {
+        span_text.innerHTML = '';   
+    }
+   
+</script>

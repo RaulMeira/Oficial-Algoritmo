@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CidadeAno</title>
+</head>
+<body>
+    Cidade Natal:
+    <input id="cidade" placeholder="cidade natal" autofocus>
+    <br> <br>
+    Ano de nascimento:
+    <input id="ano" placeholder="ano de nascimento" autofocus>
+    <br> <br>
+    <button onclick="cadastro()">Cadastrar</button>
+    <br><br>
+    <span id="spantext"> </span>
+</body>
+</html>
+<script>
+    function cadastro() {
+        spantext.innerHTML += ("Voce nasceu na cidade de " + "<b>" + cidade.value  + "</b>" + " em " + 
+        "<u>" + ano.value + "</u> <br>")
+    }
+</script>

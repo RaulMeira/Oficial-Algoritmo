@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+</head>
+
+<body>
+    <img src="logo greenhouse.jpg" alt="" style="height: 150px">
+    <h1>Simulador de ganhos</h1>
+    <p>Simule abaixo uma expectativa do quanto você pode ganhar utilizando o sistema da <span style="color: green;"><b>GreenHouse Sensor.</b></span></p>
+    <p>Qual o seu faturamento anual?</p>
+    <input id="faturamento" placeholder="Faturamento anual R$">
+    <p>Qual a quantidade de terras que você possui para plantio?</p>
+    <input id="terras" placeholder="Quantidade em hectares">
+    <br><br>
+
+    <button onclick="calculo()"> Descubra quanto você pode <b>ganhar!</b></button><br>
+    <br>
+    <span id="mostrar"></span>
+</body>
+
+</html>
+<script>
+    function calculo() {
+        var v_faturamento = Number(faturamento.value);
+        var v_qtd_terras = Number(terras.values);
+
+        var v_fat_atual_hec = v_qtd_terras / v_faturamento;
+
+        var v_fat_futuro = v_faturamento * 10;
+        var v_fat_futuro_hec = v_fat_futuro / v_qtd_terras;
+        mostrar.innerHTML = `Com a sua atual estufa convencional voce esta ganhando R$${v_faturamento.toFixed(2)}.
+        <br><br>
+        Com um faturamento por hectar de ${v_fat_atual_hec.toFixed(2)}
+        <br><br>
+        O nosso sistema de sensores pode potencializar os seus ganhos para até <b>R$${v_fat_futuro.toFixed(2)}!!!</b>
+        <br><br>
+        E um Faturmaneto por hectar de ${v_fat_futuro_hec.toFixed(2)}
+        <br><br>
+        Isso significa um crescimento 10X no seu faturamento.
+        `;
+    }
+
+</script>

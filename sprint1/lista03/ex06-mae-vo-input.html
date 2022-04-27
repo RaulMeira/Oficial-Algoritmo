@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06</title>
+</head>
+<body>
+    Informe sua nota:
+    <input id="nota">
+    <br> <br>
+    <button onclick="vo()"> Opinião da avó</button>
+    <button onclick="mae()"> Opinião da mae</button>
+    <br> <br>
+    <span id="mostrar"></span>
+    <br>
+</body>
+</html>
+<script>
+    function vo() {
+        mostrar.innerHTML = `<img src="https://i.pinimg.com/originals/06/41/63/064163197dc05d537a41d16934ee6152.jpg"
+        style="height: 200px;"> <br> Muito bem, que neto inteligente, porque tirou 
+        <b style='color: blue;'>${nota.value} </b>`
+    }
+    function mae() {
+        mostrar.innerHTML = `<img src="http://3.bp.blogspot.com/-Rs5RupgwiIs/U4kaci6cGTI/AAAAAAAAKvk/IrZX3cvzMVU/s1600/M%C3%A3e+trabalhando_+Na+mira+da+mam%C3%A3e!.png"
+        style="height: 200px;"> <br> Não fez mais que a sua obrigação com essa nota 
+        <b style='color: blue;'>${nota.value} </b>`
+    }
+
+</script>

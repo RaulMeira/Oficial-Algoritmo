@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="vermelho()"> vermelho</button>
+    <button onclick="verde()"> verde</button>
+    <button onclick="azul()"> azul</button>
+
+    <br><br>
+    <div id="divtexto">
+        Vamos mudar a cor desse texto???
+    </div>
+</body>
+</html>
+<script>
+    function vermelho() {
+        divtexto.style.color = 'red';
+        divtexto.style.backgroundColor = 'lightpink';
+    }
+    function verde() {
+        divtexto.style.color = 'green';
+        divtexto.style.backgroundColor = 'black';
+    }
+    function azul() {
+        divtexto.style.color = 'blue';
+        divtexto.style.backgroundColor = 'gray';
+        
+    }
+</script>

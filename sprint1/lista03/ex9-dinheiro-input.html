@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex09</title>
+</head>
+<body>
+<img id="semdinheiro" src="https://static8.depositphotos.com/1337050/867/i/600/depositphotos_8676120-stock-photo-no-money-1.jpg" 
+alt="" style="height: 200px;">
+<br><br>
+Dinheiro em 3 anos:  
+<input id="anos" type="text" placeholder="3 Anos">
+<br><br>  
+Dinheiro em 6 meses:
+<input id="meses" type="text" placeholder="6 Meses">
+<br><br>
+<button onclick="aparecer()"> Como estarei no futuro?</button>
+<br><br>
+<span style="display: none;"  id="dinheiro"> <img style="height: 200px;" src="https://img.migalhas.com.br/gf_base/empresas/MIGA/imagens/660580DD16DE7FD0C4D76F019732D1B8FBA6_dinheiro.png" 
+    alt=""> <span id="valor_mes" ></span> </span> 
+    <br> <br>
+<span style="display: none;" id="muitodinheiro">  <img style="height: 200px;" src="https://capitalist.com.br/wp-content/uploads/2020/02/rico-1.jpg" 
+    alt=""> <span id="valor_ano"></span> </span> 
+<br> <br>
+</body>
+</html>
+<script>
+    
+function aparecer() {
+    semdinheiro.style.display = 'none'
+    dinheiro.style.display = 'block'
+    muitodinheiro.style.display = 'block'
+
+    valor_mes.innerHTML = `Valor em 6 meses R$ ${meses.value}` 
+    valor_ano.innerHTML = `Valor em 3 anos R$ ${anos.value}`
+}
+</script>
+

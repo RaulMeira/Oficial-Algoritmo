@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="bemVindo()" > BOAS VINDAS NO ALERTA </button>
+    <button onclick="boasVindas()"> Boas vindas na página</button>
+    <br> <br>
+    <span id="span_text"></span>
+</body>
+</html>
+<script>
+    function bemVindo() {
+        alert('BEM VINDO(A)')
+    }
+    function boasVindas() {
+        span_text.innerHTML = " <span style = 'background: black; color: yellow'> BEM VINDO novo(a) usuário(a)! </span>"
+    }
+</script>
