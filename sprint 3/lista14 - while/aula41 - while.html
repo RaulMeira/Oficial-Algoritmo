@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!-- while = enquanto
+    teste logico, condição de repetição
+enquanto ela for Verdadeira, todo o bloco é executado novamente;
+se for falsa sai do while e encerra o looping (laço de repetição) -->
+<h2>O amor é lindo</h2>
+
+Diga o quanto voce gosta da sua mae (0-10)
+<input type="text" id="qntd">
+
+<button onclick="ver()">Revelar</button> <br><br>
+
+<span id="amor">  </span>
+
+
+</body>
+</html>
+
+
+<script>
+    
+   
+
+    function ver() {
+        var cont = 0
+
+        amor.innerHTML = ``
+
+        while (cont < qntd.value ) {
+            amor.innerHTML += `Mamae voce é foda <br>`
+            cont += 1
+            
+        }
+        
+    }
+
+
+    // sem botão
+    // var cont = 0
+    // amor.innerHTML = ``;
+
+
+    // while (cont < 5) {
+    //     amor.innerHTML += `O amor é lindo <br>`
+    //     cont += 1
+    // }
+
+</script>

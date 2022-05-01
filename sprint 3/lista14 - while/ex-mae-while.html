@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>O amor é lindo</h2>
+    Diga o quanto vc gosta da sua mae (0-10)
+    <input type="range" id="mae" min="0" max="10">
+    <br>
+    <button onclick="revelar()">Revelar</button>
+    <br><br>
+    <span id="frase"></span>
+</body>
+</html>
+
+<script>
+    function revelar() {
+        var cont = 0
+        while (cont < mae.value) {
+            frase.innerHTML += `AMO MINHA MAE <br>`
+            cont += 1
+        }
+    }
+
+</script>

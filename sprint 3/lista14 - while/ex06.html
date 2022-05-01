@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual o nome que voce mais ama na vida:
+    <input type="text" id="nome">
+    <br><br>
+    Quanto voce o ama:
+    <input type="text" id="qntd">
+    <br><br>
+    <button onclick="ver()">Expressar amor</button>
+    <br><br>
+    <span id="frase"></span>
+
+
+</body>
+</html>
+
+<script>
+    function ver() {
+        var cont = 0
+        while (cont != qntd.value) {
+            cont += 1
+            frase.innerHTML += `${cont} - ${nome.value}, eu te amo! sempre lembre disso! <br>`
+            
+        }
+    }
+
+</script>
+ 

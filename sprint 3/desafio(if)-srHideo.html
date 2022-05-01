@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas de morango</title>
+</head>
+
+<body>
+    <div id="opcao1" style="display: block;">
+        <h1>SR. HIDEO</h1>
+        Quantidade de caixas de morangos que foram colhidos e serão vendidos:
+        <input type="text" id="vendido_input">
+        <br><br>
+        <button onclick="abrir()">Abrir as Vendas</button>
+        <br><br>
+    </div>
+
+    <div id="opcao2" style="display: none;">
+        <div id="opcao3" style="display: none;">
+            Quantidade de caixas de morangos que foi vendido:
+            <input type="text" id="morango_vendido_input">
+            <br><br>
+            Valor da venda de cada caixa de morango:
+            <input type="text" id="valor_caixa_input" onkeyup="vendas()"> <span id="mensagem"></span>
+            <br><br>
+        </div>
+        <button onclick="registrar()">Registrar venda</button>
+        <br>
+        <span id="total"></span>
+        <br><br>
+        <button onclick="encerrar()">Encerrar as vendas</button>
+        <br>
+        <span id="final"></span>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function abrir() {
+        var vendido = Number(vendido_input.value)
+        if (vendido < 100) {
+            alert('ERRO - Com esse volume de Morangos não dá para abrir as vendas')
+            opcao1.style.display = 'none'
+        }
+        else {
+            if (vendido > 2000) {
+                alert('AVISO – Tudo isso!!! Verificar se a quantidade está correta')
+                opcao1.style.display = 'none'
+                opcao2.style.display = 'block'
+                opcao3.style.display = 'block'
+            }
+            if (vendido >= 100 && vendido <= 2000) {
+                opcao1.style.display = 'none'
+                opcao2.style.display = 'block'
+                opcao3.style.display = 'block'
+
+            }
+        }
+
+    }
+
+
+    function vendas() {
+
+        var morango_vendido = Number(morango_vendido_input.value)
+        var valor_caixa = Number(valor_caixa_input.value)
+
+
+        if (morango_vendido < 20) {
+            if (6 >= valor_caixa && valor_caixa >= 5) {
+                mensagem.innerHTML = `Valor OK`
+            }
+            else {
+                mensagem.innerHTML = `Valor errado para essa quantidade vendida`
+            }
+        }
+        if (20 <= morango_vendido && morango_vendido <= 40) {
+            if (4.50 <= valor_caixa && valor_caixa <= 5.50) {
+                mensagem.innerHTML = `Valor OK`
+            }
+            else {
+                mensagem.innerHTML = `Valor errado para essa quantidade vendida`
+            }
+
+        }
+        if (morango_vendido > 40) {
+            if (4.00 <= valor_caixa && valor_caixa <= 5) {
+                mensagem.innerHTML = `Valor OK`
+            }
+            else {
+                mensagem.innerHTML = `Valor errado para essa quantidade vendida`
+            }
+        }
+    }
+
+    var totalVendasMorango = 0
+    var saldo = 0
+    var cont = 0
+    var maiorVolume = 0
+    var maiorVenda = 0
+    var totalVendas = 0
+    function registrar() {
+
+        totalVendasMorango += Number(morango_vendido_input.value)
+        totalVendas = Number(morango_vendido_input.value) * Number(valor_caixa_input.value)
+        
+        saldo = Number(vendido_input.value) - totalVendasMorango
+        if (saldo < 0) {
+            alert('Saldo negativo')
+        }
+        else {
+            total.innerHTML += `Com a venda de ${totalVendasMorango} de caixas de Morango o saldo no restante é de ${saldo}<br>`
+        }
+
+        if (Number(morango_vendido_input.value) > maiorVolume) {
+            maiorVolume = Number(morango_vendido_input.value);
+        }
+        if (Number(valor_caixa_input.value) > maiorVenda) {
+            maiorVenda = Number(valor_caixa_input.value);
+        }
+    }
+
+    function encerrar() {
+        opcao3.style.display = 'none'
+
+        var media = totalVendas /  totalVendasMorango
+
+        var resultado = ''
+        if (media >= 5) {
+            resultado = 'bom'
+        }
+        if (totalVendasMorango > 1000) {
+            if (saldo < 100) {
+                resultado = 'bom'
+            }
+        }
+     
+        else {
+            resultado = 'normal'
+        }
+
+        final.innerHTML = `Venda de Morangos <br><br>
+
+Saldo de produto = ${saldo} <br>
+
+Volume total vendido = ${totalVendasMorango} <br>
+
+Valor total das vendas = ${totalVendas} <br>
+
+Valor médio das vendas = R$${media.toFixed(2)} <br><br>
+
+O turno hoje foi ${resultado}<br><br>
+
+O maior volume vendido foi de: ${maiorVolume}<br>
+
+O maior valor de venda foi de R$ ${maiorVenda}<br>`
+    }
+
+</script>
+

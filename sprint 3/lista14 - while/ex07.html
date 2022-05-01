@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplos</title>
+</head>
+
+<body>
+    Escreva um número entre 20 e 100:
+    <input type="text" id="num">
+    <br><br>
+    <button onclick="ver()">Adoro múltiplos de 5</button>
+    <br><br>
+    <span id="frase"></span>
+</body>
+
+</html>
+
+<script>
+    function ver() {
+        var cont = 0
+        while (cont <= num.value) {
+            cont += 1
+            if (cont % 5 == 0) {
+
+                frase.innerHTML += `${cont}<br>`
+            }
+        }
+
+    }
+
+</script>
