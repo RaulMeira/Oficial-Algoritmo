@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 11</title>
+</head>
+
+<body>
+    Limite inferior: <input type="text" id="inferior">
+    <br>
+    Limite superior: <input type="text" id="superior">
+    <br>
+    Numero pra testar divisiblidade: <input type="text" id="divisivel">
+    <br>
+    <button onclick="contar()">Contar</button>
+    <br>
+    <br>
+    <span id="msg"></span>
+</body>
+
+</html>
+
+<script>
+    function contar() {
+        var numInf = Number(inferior.value)
+        var numSup = Number(superior.value)
+        var numDiv = Number(divisivel.value)
+
+        if (numInf < 1) {
+            alert(`<br>Numero inferior tem que ser maior que 1`)
+        }
+        if (numSup > 100) {
+            alert(`Numero superior tem que ser menor que 100`)
+        }
+        for (var index = numInf; index <= numSup; index++) {
+                if (numDiv > 10 || numDiv < 3) {
+                    alert(`Divisivel tem que estar entre 3 e 10`)
+                }
+                else {
+                    if (index % numDiv == 0) {
+                        msg.innerHTML += `<br>${index}`
+                    }
+                }
+
+            
+        }
+    
+    }
+</script>

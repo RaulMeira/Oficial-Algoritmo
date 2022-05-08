@@ -1,0 +1,55 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminho pra SPTECH</title>
+</head>
+
+<body>
+    <h1>CAMINHO</h1>
+    Quantos onibus precisa pegar: <input type="text" id="onibus_input">
+    <br><br>
+    Quantos trens precisa pegar: <input type="text" id="trem_input">
+    <br><br>
+    Quantos metros precisa pegar: <input type="text" id="metro_input">
+    <br><br>
+    <button onclick="partiu()">Partiu trajeto</button>
+    <br>
+    <span id="msg_onibus" style="color: red;"></span>
+    <br>
+    <span id="msg_trem" style="color: green;"></span>
+    <br>
+    <span id="msg_metro" style="color: blue;"></span>
+</body>
+
+</html>
+
+<script>
+    cont = 0
+    contTrem = 0
+    contMetro = 0
+    function partiu() {
+        var onibus = Number(onibus_input.value)
+        var trem = Number(trem_input.value)
+        var metro = Number(metro_input.value)
+        while (cont < onibus) {
+            cont += 1
+            msg_onibus.innerHTML += `<br>Pegando o ${cont} onibus`
+        }
+        while (contTrem < trem) {
+            contTrem += 1
+            msg_trem.innerHTML += `<br>Pegando o ${contTrem} trem`
+        }
+        while (contMetro < metro) {
+            contMetro += 1
+            msg_metro.innerHTML += `<br>Pegando o ${contMetro} metro`
+        }
+
+    }
+
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 10</title>
+</head>
+<body>
+    <button onclick="caba()">Numeros cabalisticos</button>
+    <br><br>
+    <span id="msg"></span>
+</body>
+</html>
+
+
+<script>
+    function caba() {
+        for (var index = 0; index <= 15; index++) {
+           if (index != 3 && index != 4 && index != 7 && index != 10 && index != 12 ) {
+               msg.innerHTML += `<br>${index}`
+           }
+            
+        }
+    }
+
+</script>
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 08</title>
+</head>
+<body>
+    Limite inferior: <input type="text" id="inferior">
+    <br>
+    Limite superior: <input type="text" id="superior">
+    <br>
+    <button onclick="contar()">Contar</button>
+    <br>
+    <br>
+    <span id="msg"></span>
+
+</body>
+</html>
+
+
+<script>
+    function contar() {
+        var numInf = Number(inferior.value)
+        var numSup = Number(superior.value)
+
+        for (var index = numInf; index <= numSup; index++) {
+            if (numInf < 1 ) {
+                msg.innerHTML = `Numero inferior tem que ser maior que 1`
+            }
+            if (numSup < numInf) {
+                msg.innerHTML = `Numero superior tem que ser maior que o inferior`
+            }
+            else{
+                msg.innerHTML += `<br>${index}`
+            }
+        }
+    }
+
+
+</script>
+
+

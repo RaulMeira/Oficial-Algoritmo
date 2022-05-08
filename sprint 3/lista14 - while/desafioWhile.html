@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benedito</title>
+</head>
+
+<body>
+    <div style="display: block;" id="parte1">
+        <h1>Numeros divisíveis</h1>
+        Numero inicial: <input type="text" id="n1_input">
+        <br>
+        numero final: <input type="text" id="n2_input">
+        <br><br>
+    </div>
+    <button onclick="analisar()">Analisar</button>
+    <br>
+    <span id="msg"></span>
+    <br><br>
+    <span id="final"></span>
+</body>
+
+</html>
+
+<script>
+
+    var cont = 0
+    var fim = 0
+    var total = 0
+    function analisar() {
+        var n1 = Number(n1_input.value)
+        var n2 = Number(n2_input.value)
+        parte1.style.display = 'none'
+        if (n1 < 0 || n2 < n1) {
+            msg.innerHTML = `Intervalo de numeros INVALIDO`
+        }
+        else {
+            cont = n1
+            total = (n2 - n1) + 1
+            while (cont <= n2) {
+                
+                if (cont % 2 == 0) {
+                    msg.innerHTML += ` O número ${cont} é divisível por 2 `
+
+                }
+                if (cont % 3 == 0) {
+                    msg.innerHTML += ` O número ${cont} é divisível por 3 `
+                }
+                if (cont % 5 == 0) {
+                    msg.innerHTML += ` O número ${cont} é divisível por 5 `
+
+                }
+                if (cont % 7 == 0) {
+                    msg.innerHTML += ` O número ${cont} é divisível por 7 `
+
+                }
+                if (cont % 11 == 0) {
+                    msg.innerHTML += ` O número ${cont} é divisível por 11 `
+
+                }
+                if (cont % 13 == 0) {
+                    msg.innerHTML += ` O número ${cont} é divisível por 13 `
+                    
+                }
+            
+                if (cont % 2 != 0 && cont % 3 != 0 && cont % 5 != 0 && cont % 7 != 0 && cont % 11 != 0 && cont % 13 != 0) {
+                    msg.innerHTML += ` O número ${cont} não é divisível pelos principais números primos`
+                }
+                if (cont % 2 == 0 || cont % 3 == 0 || cont % 5 == 0 || cont % 7 == 0 || cont % 11 == 0 || cont % 13 == 0) {
+                    fim += 1
+                }
+                cont += 1
+                msg.innerHTML += `<br>`
+            }
+            final.innerHTML = `O intervalo de ${n1_input.value} a ${n2_input.value} tem ${total} números, sendo que ${fim} são divisiveis por algum numero primo`
+
+        }
+
+    }
+
+</script>
+
+
+
+
+

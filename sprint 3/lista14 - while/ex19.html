@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caronas</title>
+</head>
+<body>
+    <h1>Entrada de caronas</h1>
+    Quantas pessoas vão entrar no carro
+    <input type="text" id="pessoas_input">
+    <br><br>
+    Capacidade de passageiros que o veículo suporta:
+    <input type="text" id="capacidade_input">
+    <button onclick="partiu()">#Partiu Carona</button>
+    <br><br>
+    <span id="span"></span>
+</body>
+</html>
+    
+
+
+<script>
+    var cont = 0
+    function partiu() {
+        var pessoas = Number(pessoas_input.value)
+        var capacidade = Number(capacidade_input.value)
+        while (cont < pessoas) {
+            cont += 1
+            if (cont == 1) {
+                span.innerHTML += `<br> Entrou o 1º passageiro (que é o(a) motorista)`
+            }
+            else {
+                if (cont <= capacidade) {
+                    span.innerHTML += `<br> Entrou o ${cont} passageiro`
+                }
+                else {
+                    span.innerHTML += `<br> O ${cont} passageiro terá que esperar`
+                }
+            }
+            
+        }
+    
+    }
+
+</script>
