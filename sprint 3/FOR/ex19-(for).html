@@ -1,0 +1,65 @@
+19. Crie um programa que vá contando a idade do usuário e descrevendo sua fase na vida, considerando que:
+- Primeira Infância: 0 a 4 anos
+- Pré-escolar: + de 4 aos 6 anos
+- Segunda Infância: + de 6 aos 10 anos
+- Adolescência: + de 10 aos 18 anos
+- Adulto: + de 18 até os 50 anos
+- Melhor idade: + de 50 anos até 100 anos
+- Matusalém: + de 100 anos
+
+A última linha deve ser a idade informada.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex19</title>
+</head>
+
+<body>
+    <h1>Fases da vida</h1>
+    Digite a sua idade: <input type="text" id="idade_input" onchange="ver()">
+    <br><br>
+    <span id="msg"></span>
+
+</body>
+
+</html>
+
+<script>
+    function ver() {
+        var idade = Number(idade_input.value)
+        msg.innerHTML = ``
+        for (var index = 0; index <= idade; index++) {
+            if (index >= 0 && index <= 4 ) {
+                msg.innerHTML += `<br>${index} anos (Primeira infancia)`
+            }
+            if (index > 4 && index <= 6) {
+                msg.innerHTML += `<br>${index} anos (Pré-escolar)`
+            }
+            if (index > 6 && index <= 10) {
+                msg.innerHTML += `<br>${index} anos (Segunda infancia)`   
+            }
+            if (index > 10 && index <= 18) {
+                msg.innerHTML += `<br>${index} anos (Adolescencia)`
+            }
+            if (index > 18 && index <= 50) {
+                msg.innerHTML += `<br>${index} anos (Adulto)`
+            }
+            if (index > 50 && index <= 100) {
+                msg.innerHTML += `<br>${index} anos (Melhor adulto)`
+            }
+            if (index > 100) {
+                msg.innerHTML += `<br>${index} anos (Matusalem)`
+            }
+
+            
+            
+
+            
+        }
+    }
+
+</script>

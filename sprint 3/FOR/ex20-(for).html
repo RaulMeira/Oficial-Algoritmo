@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 20</title>
+</head>
+
+<body>
+    <h1>3 e 5</h1>
+    <button onclick="curto()">Curto 3 e 5!</button>
+    <br><br>
+    <span id="mostrar"></span>
+</body>
+
+</html>
+
+<script>
+    function curto() {
+        for (var index = 1; index <= 100; index++) {
+            var num3 = index % 3 == 0
+            var num5 = index % 5 == 0
+            if (num3 == false && num5 == false) {
+                mostrar.innerHTML += `<br>${index}`
+            }
+            else {
+                if (num3 == true && num5 == true) {
+                    mostrar.innerHTML += `<br>É TRI! É PENTA!`
+                }
+                else {
+                    if (num3 == true) {
+                        mostrar.innerHTML += `<br>É TRI!`
+                    }
+                    if (num5 == true) {
+                        mostrar.innerHTML += `<br>É PENTA!`
+
+                    }
+                }
+            }
+        }
+
+    }
+
+
+</script>

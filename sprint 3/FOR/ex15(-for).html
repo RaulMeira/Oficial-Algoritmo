@@ -16,6 +16,7 @@
     <button onclick="acomp()">Acompanhar grana</button>
     <br><br>
     <div id="msg"></div>
+    <br>
     <div id="total"></div>
 </body>
 
@@ -23,40 +24,29 @@
 
 <script>
     var preço = 0
+    var bonus = 0
     function acomp() {
         var mes = Number(dep_input.value)
         var valor = Number(valor_input.value)
 
         for (var index = 1; index <= mes; index++) {
-            
-            if (index % 3 == 0) {
-                var bonus = valor + (valor * 0.01)
-                preço = bonus}
-            else{
-                preço = valor * index
-            }
-                // msg.innerHTML += `<br>${index} Mes: R$ ${bonus}`
-                msg.innerHTML += `<br>${index} Mes: R$ ${preço}`
-            
 
-                
+            preço += valor
+
+            if (index % 3 == 0) {
+                bonus = preço * 0.01
+                preço += bonus
+                msg.innerHTML += `<br>${index} Mes: R$ ${preço.toFixed(2)}`
+            }
+
+            else {
+
+                msg.innerHTML += `<br>${index} Mes: R$ ${preço.toFixed(2)}`
+            }
             
-            total.innerHTML = `Total guardado: R$${valor * mes}`
         }
+        total.innerHTML = `Total guardado: R$${preço.toFixed(2)}`
     }
 
 
 </script>
-
-
-
-15. Refaça o programa anterior de tal forma que, a cada 3 depósitos o banco dê um bônus de 1% sobre o valor acumulado
-após o depósito. Ex:
-1º Mês: R$ 500.00
-2º Mês: R$ 1000.00
-3º Mês: R$ 1515.00
-4º Mês: R$ 2015.00
-5º Mês: R$ 2515.00
-6º Mês: R$ 3045.15
-Total guardado: R$3045.15
-Note que nos meses 3 e 6, o valor aumentou em 1% do total após o depósito.
