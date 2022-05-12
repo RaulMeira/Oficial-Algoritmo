@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Número (15 a 23): <input type="text" id="num_input">
+    <br><br>
+    <button onclick="registrar()">Registro</button>
+    <br><br>
+    <div id="msg"></div>
+    <br><br>
+    <button onclick="encerrar()">Encerrar</button>
+    <br>
+    <span id="resultado"></span>
+</body>
+
+</html>
+
+<script>
+    var menor = 24
+    var maior = 0
+    var total = 0
+    var cont = 0
+    function registrar() {
+        var num = Number(num_input.value)
+        if (num > 23 || num < 15) {
+            alert("Numero errado")
+        }
+        else {
+            cont += 1
+            total += num
+            msg.innerHTML += `<br> ${num}`
+            if (num > maior) {
+                maior = num;
+                
+            }
+            
+            if (num < menor) {
+                menor = num
+            }
+        }
+    }
+
+
+    function encerrar() {
+        var media = total / cont
+        resultado.innerHTML = `Maior = ${maior} <br>
+        Menor = ${menor} <br>
+        Média = ${media}
+         
+        `
+    }
+
+
+</script>
