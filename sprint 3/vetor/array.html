@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <h1>Prof Alice</h1>
+    Nome do aluno: <input type="text" id="nome_input">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br>
+    <button onclick="mostrar()">Mostrar</button>
+    <br>
+    <span id="msg"></span>
+</body>
+</html>
+
+
+<script>
+    var vt_nome = []
+    function cadastrar() {
+        var nome = nome_input.value
+        vt_nome.push(nome);
+        nome_input.value = ``
+    }
+    function mostrar() {
+        // msg.innerHTML = `${vt_nome}`
+        // msg.innerHTML += `<br>`
+        // msg.innerHTML += `O 3 registro foi do ${vt_nome.length[2]}`
+        // for (var index = 0; index < vt_nome.length; index++) {
+        //     msg.innerHTML += `O ${index + 1} aluno é o ${vt_nome[index]} <br>`
+            
+        // }
+        for (var index = vt_nome.length-1; index >= 0; index -- ) {
+           msg.innerHTML += `${vt_nome[index]}<br>`
+           
+            
+        }
+    }
+
+</script>
+<!-- 
+    
+
+
+
+
+
+
+ -->

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>VIAGEM</h1>
+    <input type="text" placeholder="destino:" id="destino_input">
+    <button onclick="add()">Adicionar</button>
+    <br><br>
+    <button onclick="primeira()">Primeira viagem</button>
+    <br>
+    <span id="msg1"></span>
+    <br>
+    <button onclick="terceira()">Terceira viagem</button>
+    <br>
+    <span id="msg3"></span>
+    <br>
+    <button onclick="ultima()">Ultima viagem</button>
+    <br>
+    <span id="final"></span>
+
+</body>
+
+</html>
+
+<script>
+    var vt_viagem = []
+    function add() {
+        vt_viagem.push(destino_input.value)
+        destino_input.value = ``
+
+    }
+    function primeira() {
+        if (vt_viagem.length == 0) {
+            msg1.innerHTML = `Ainda não viajou`
+        }
+        else {
+            msg1.innerHTML = `${vt_viagem[0]}`
+        }
+    }
+    function terceira() {
+        if (vt_viagem.length < 2) {
+            msg3.innerHTML = `Ainda não fez a terceira viagem`
+        }
+        else {
+            msg3.innerHTML = `${vt_viagem[2]}`
+        } 
+            
+        
+    }
+
+    function ultima() {
+        if (vt_viagem.length <= 0) {
+            final.innerHTML = `Ainda não viajou`
+        }
+        else {
+            final.innerHTML = `${vt_viagem[vt_viagem.length-1]}`
+        }
+    }
+</script>
