@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    preço do produto: <input type="text" id="preço_input">
+    <br>
+    <button onclick="cad()">cadastrar</button>
+    <br>
+    <button onclick="att()">Atualizar Estoque</button>
+    <br>
+    <span id="msg"></span>
+</body>
+</html>
+
+<script>
+    var vt_preço = []
+    var total = 0
+    function cad() {
+        var preço = Number(preço_input.value)
+        vt_preço.push(preço)
+        preço_input.value = ''
+        total += preço
+
+    }
+
+    function att() {
+        msg.innerHTML = `Voce tem ${vt_preço.length} produtos cadastrados em estoque <br>
+        Seu estoque vale R$${total.toFixed(2)}`
+    }
+
+</script>
+
+
+
+ 

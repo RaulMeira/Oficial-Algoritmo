@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex07</title>
+</head>
+
+<body>
+    Nome dos filmes que mais gosta: <input type="text" id="filme">
+    <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br>
+    <span id="msg" style="color: blue;"></span>
+</body>
+
+</html>
+
+<script>
+    var vt_filme = []
+    function cadastrar() {
+        vt_filme.push(filme.value)
+        filme.value = ''
+        if (vt_filme.length % 2 != 0) {
+            msg.innerHTML += `<span style="color: blue;"> ${vt_filme[vt_filme.length - 1]} </span> <br>`
+        }
+        else {
+            msg.innerHTML += `<span style="color: red;"> ${vt_filme[vt_filme.length - 1]} </span> <br>`
+
+        }
+    }
+
+
+</script>

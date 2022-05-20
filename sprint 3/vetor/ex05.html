@@ -1,0 +1,47 @@
+
+
+c) Na medida que vai cadastrando, deve ser exibido ou atualizado um "painel" como neste exemplo:
+
+  Seu filme favorito: 50 tons de cinza
+  Seu 3º filme favorito: A era do gelo 1
+  Total de filmes cadastrados: 5
+
+OBS: no "3º filme", caso não tenham sido cadastrados ainda 3 filmes, exibir "Ainda não existe".
+OBS: o "filme favorito" é o primeiro cadastrado
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    filme favorito: <input type="text" id="filme_input">
+    <br>
+    <button onclick="cad()">Cadastrar</button>
+    <br>
+    <span id="msg"></span>
+</body>
+</html>
+
+<script>
+    var vt_filme = []
+
+    function cad() {
+        vt_filme.push(filme_input.value)    
+        filme_input.value = ''
+        msg.innerHTML = ''
+       
+            // if (vt_filme != ) {
+                
+            // }
+            msg.innerHTML += `Seu filme favorito: ${vt_filme[0]} <br>
+                        Seu 3º filme favorito: ${vt_filme[2]} <br>
+                        Total de filmes cadastrados: ${vt_filme.length}`
+
+        
+      
+    }
+
+</script>

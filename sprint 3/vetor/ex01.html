@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title>
+</head>
+
+<body>
+    frutas: <input type="text" id="fruta_input">
+    <br>
+    <button onclick="pesq()">Pesquisar</button>
+    <br>
+    <span id="msg"></span>
+
+
+</body>
+
+</html>
+
+<script>
+    var vt_frutas = ["maça", "banana", "melancia", "morango", "kiwi"]
+
+    function pesq() {
+        var ok = vt_frutas.indexOf(fruta_input.value)
+
+        if (ok >= 0) {
+            msg.innerHTML = `A fruta ${fruta_input.value} existe na lista`
+        }
+        else {
+            msg.innerHTML = `A fruta ${fruta_input.value} não existe na lista`
+        }
+
+
+    }
+
+</script>

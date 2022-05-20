@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex09</title>
+</head>
+
+<body>
+    nome de cada projeto que já criou na vida: <input type="text" id="projeto_input">
+    <br>
+    <button onclick="registrar()">Registrar Projeto</button>
+    <br>
+    <span id="msg"></span>
+    <br>
+    <button onclick="mostrar()">Mostrar projetos</button>
+    <br>
+    <span id="final"></span>
+</body>
+
+</html>
+
+<script>
+    var vt_projeto = []
+    var cont = 0
+    function registrar() {
+        var projeto = projeto_input.value
+        projeto_input.value = ''
+        cont += 1
+        vt_projeto.push(projeto)
+        var nivel = ''
+        if (cont >= 0 && cont <= 4) {
+            nivel = 'junior'
+        }
+        else {
+            if (cont > 4 && cont <= 12) {
+                nivel = `pleno desde o projeto ${vt_projeto[4]}`
+            }
+            else {
+                if (cont >= 13) {
+                    nivel = `senior desde o projeto ${vt_projeto[12]}`
+                }
+            }
+        }
+
+        msg.innerHTML = `Você já fez ${cont} projetos. Por isso você é um profissional ${nivel}`
+
+    }
+
+    function mostrar() {
+        for (var index = vt_projeto.length - 1; index >= 0; index--) {
+            final.innerHTML += `${vt_projeto[index]}<br>`
+
+
+        }
+
+    }
+
+
+</script>
+

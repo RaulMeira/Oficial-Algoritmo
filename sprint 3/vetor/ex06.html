@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06</title>
+</head>
+
+<body>
+    nomes dos filmes que mais gosta: <input type="text" id="filme_input">
+    <br>
+    <button onclick="cad()">cadastrar</button>
+    <br>
+    <span id="msg"></span>
+</body>
+
+</html>
+
+<script>
+    var vt_filme = []
+    function cad() {
+        vt_filme.push(filme_input.value)
+        filme_input.value = ''
+        for (var index = vt_filme.length; index < vt_filme.length + 1; index++) {
+
+            msg.innerHTML += `${vt_filme[vt_filme.length - 1]}<br>`
+        }
+
+    }
+
+
+</script>

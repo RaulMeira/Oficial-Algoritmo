@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex16</title>
+</head>
+<body>
+    digite um numero qualquer: <input type="text" id="num_input">
+    <br>
+    <button onclick="anal()">Analisar Histórico</button>
+    <br>
+    <span id="msg"></span>
+</body>
+</html>
+
+<script>
+    var vt_num = []
+    var maior = 0
+    var menor = 9999999999
+
+    function anal() {
+        var num = Number(num_input.value)
+        num_input.value = ''
+        vt_num.push(num)
+        if (num > maior) {
+            maior = num
+        }
+        if (num < menor) {
+            menor = num
+        }
+        for (var index = 1; index <= vt_num.length; index++) {
+            
+            msg.innerHTML = `${index}º Número: ${vt_num[index - 1]}<br>
+            Maior: ${maior} <br>
+            Menor: ${menor} <br>
+        `
+        }
+        
+    }
+</script>
+
+<!-- 1
+
+
+ deve aparecer um histórico dos números cadastrados, bem como o maior e o menor, como no exemplo a seguir:
+   1º Número: 15
+   2º Número: 22
+   3º Número: 19
+   4º Número: 5
+
+   Maior: 22
+   Menor: 5
+ -->
+
