@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caracteres</title>
+</head>
+<body>
+    frase: <input type="text" id="frase">
+<br><br>
+<button onclick="ver()">ver</button>
+<br><br>
+<span id="mostrar"></span>
+
+</body>
+</html>
+
+<script>
+    function ver() {
+        mostrar.innerHTML = `${(frase.value).indexOf('a')}`
+    }
+
+</script>
+<!-- a contagem começa a partir do 0
+ou seja: R A U L 
+         0 1 2 3
+
+.indexOf ('@') = pra procurar aonde ta o @ na palavra; retorna apenas o primeiro numero
+ex: a b @ c @ t e
+    0 1 2 3 4 5 6
+    só retorna o primeiro @, que é o 2
+retorna a posição(número) de tal coisa
+
+!= siginifica diferente, porta not de arq comp
+    -->

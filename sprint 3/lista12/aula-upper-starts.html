@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upper-lower-starts</title>
+</head>
+<body>
+    <h1>teste aula frizza</h1>
+    coloque um link: <input type="text" id="frasee">
+    <br><br>
+    <button onclick="ver()">ver</button>
+    <br><br>
+    <span id="mostrar"></span>
+
+
+</body>
+</html>
+
+<script>
+    function ver() {
+        var frase = frasee.value
+        mostrar.innerHTML = `Começa com g? ${frase.startsWith('g')}<br>
+        seu nome em capslock é ${frase.toUpperCase()}<br>
+        seu nome em tudo minusculo é ${frase.toLowerCase()}`
+        if (frase.startsWith('g')) {
+            alert ('correto')
+        }
+        else{
+            alert('errado')
+        }
+    }
+
+</script>
+
+<!-- .length = mostra a qntd de caracteres que uma var possui -> retorno de um lenght é um numero
+.length = tbm para fazer operaçoes logicas
+usar depois de uma variavel -> var oi = oii.value
+
+.startsWith('www') = pra ver se começa com oq tiver entre ('')
+-> retorno é um True ou False
+ if (ax_frase.startsWith('www'){
+     alert('sim é uma url')
+ }
+
+ .endsWith ('.br') = pra ver se acaba com oq tiver entre ('')
+ if (ax_frase.startsWith('.com.br'){
+     alert('sim é um dominio brasileiro')
+
+.toUpperCase = pra ficar em capslock
+
+.toLowerCase = pra ficar minusculo
+ }
+ -->

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex21</title>
+</head>
+
+<body>
+
+    <h1>Ghost, do outra lado da vida</h1>
+    quantidade de elefante: <input type="text" id="elefante_input">
+    <br>
+    <button onclick="ataz()">Atazanar a médium</button>
+    <br>
+    <span id="msg"></span>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function ataz() {
+        var elefante = Number(elefante_input.value)
+       
+
+        for (var index = 2; index <= elefante; index++) {
+
+           for (var inc = 0; index <= index; inc++) {
+               
+               
+           }
+
+            msg.innerHTML += `1 elefante incomoda muita gente! <br>
+                            ${index} elefantes ${inc}, muito mais <br> <br>`
+
+        }
+
+    }
+
+</script>
+<!-- 
+1 elefante incomoda muita gente!
+2 elefantes, incomodam, incomodam, muito mais!
+1 elefante incomoda muita gente!
+3 elefantes, incomodam, incomodam, incomodam, muito mais!
+1 elefante incomoda muita gente!
+4 elefantes, incomodam, incomodam, incomodam, incomodam, muito mais!
+... e assim por diante
+
+b) Ao clicar em "Atazanar a médium", exiba sempre o trecho da canção de 1 elefante, seguido do trecho
+ com 2 elefantes e depois 3... até a quantidade de elefantes indicado em a). Note que a palavra "incomodam" repete-se conforme essa mesma quantidade.
+Por exemplo, o se o usuário informar 4 em a), devem aparecer 3 estrofes, como no enunciado da questão, de "2 elefantes" até "4 elefantes -->

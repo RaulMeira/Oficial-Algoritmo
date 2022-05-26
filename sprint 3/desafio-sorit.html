@@ -125,9 +125,9 @@
 
     var MAIORIDADE = 0
     var MENORIDADE = 9999999999999999
-    var SomaIdade3 = 0
-    var primeira = 0
-    var ultima = 0
+    var somaIdade3 = 0
+    var contMEDIA = 0
+    var vt_ocorr = []
     function anal_idade() {
 
         var menorId = Number(menorId_input.value)
@@ -142,7 +142,7 @@
             }
             else {
                 for (var index = 0; index < vt_idade.length; index++) {
-                    primeira = vt_idade
+
 
                     if (vt_idade[index] >= menorId && vt_idade[index] <= maiorId) {
 
@@ -152,19 +152,25 @@
                         if (vt_idade[index] < MENORIDADE) {
                             MENORIDADE = vt_idade[index]
                         }
-                    }
-                    
-                    var mediaIdade = SomaIdade3  / index
 
-                    final.innerHTML = `Resumo do intervalo de idades <br>
-                    Inicial: ${menorId} Final: ${maiorId} <br>
-                    Menor Idade do intervalo: ${MENORIDADE} <br>
-                    Maior Idade do intervalo: ${MAIORIDADE} <br>
-                    Qtde de idades cadastradas no intervalo: ${index} <br>
-                    Média das idades do intervalo: ${mediaIdade} <br>
-                    Primeira ocorrência que atendeu o intervalo: ${}} <br>
-                    Última ocorrência que atendeu o intervalo: ${ultima}
-                `
+                        vt_ocorr.push(vt_idade[index])
+
+                        contMEDIA += 1
+                        somaIdade3 += vt_idade[index]
+                        var mediaIdade = somaIdade3 / contMEDIA
+
+                        final.innerHTML = `Resumo do intervalo de idades <br>
+                            Inicial: ${menorId} Final: ${maiorId} <br>
+                            Menor Idade do intervalo: ${MENORIDADE} <br>
+                            Maior Idade do intervalo: ${MAIORIDADE} <br>
+                            Qtde de idades cadastradas no intervalo: ${vt_ocorr.length} <br>
+                            Média das idades do intervalo: ${mediaIdade.toFixed(2)} <br>
+                            Primeira ocorrência que atendeu o intervalo: ${vt_ocorr[0]} <br>
+                            Última ocorrência que atendeu o intervalo: ${vt_ocorr[vt_ocorr.length - 1]}<br>
+                            
+                            lista de ocorrencias que atenderam o intervalo: ${vt_ocorr} `
+                    }
+
                 }
 
             }
@@ -172,14 +178,6 @@
 
     }
 
-</script>=
+</script>
 
 
-
-
-
-<!-- 
-
-4. Emitir a lista de ocorrências que atenderam o intervalo
-XX, XX, XX,
-OBS. Lembre-se que o usuário identifica com 1 a primeira ocorrência e 9 como a nona ocorrência. -->

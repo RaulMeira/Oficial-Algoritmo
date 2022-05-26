@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="parte1" style="display: block;">
+        <h1>prof alice</h1>
+        <h1>Analise de performances de alunos - registro</h1>
+        Nome do aluno: <input type="text" id="nome_input">
+        <br>
+        Nota do aluno: <input type="text" id="nota_input">
+        <br>
+        <button onclick="reg()">Registrar</button>
+        <button onclick="anal()">Analisar</button>
+        <br>
+        <span id="msg"></span>
+    </div>
+
+    <div id="parte2" style="display: none;">
+        <h1>Analise de performances de alunos - pesquisa</h1>
+        Entre com o inervalo de notas: <input type="text" placeholder="De" id="inicio_input">
+        <input type="text" id="fim_input" placeholder="Até">
+        <br>
+        <button onclick="pesq()">Pesquisar</button>
+        <br>
+        <span id="final"></span>
+        <br>
+        <span id="total"></span>
+
+
+    </div>
+</body>
+
+</html>
+
+
+<script>
+
+    var vt_nome = []
+    var vt_nota = []
+    function reg() {
+        var nome = nome_input.value
+        var nota = Number(nota_input.value)
+
+        if (nome == '' || nota > 10 || nota < 0) {
+            msg.innerHTML = `ERRO. Preencha corretamente`
+        }
+        else {
+            vt_nome.push(nome)
+            vt_nota.push(nota)
+            msg.innerHTML = ``
+            nome_input.value = ''
+            nota_input.value = ''
+
+            for (var index = vt_nome.length - 1; index >= 0; index--) {
+                msg.innerHTML += `${vt_nome[index]}<br>
+                                      ${vt_nota[index]}<br> `
+
+            }
+
+        }
+
+    }
+
+    function anal() {
+        parte1.style.display = 'none'
+        parte2.style.display = 'block'
+
+    }
+
+
+    var totAlu = 0
+    var maior = 0
+    var menor = 9999999999999999999
+    var contMedia = 0
+    var soma = 0
+    function pesq() {
+        var inicio = Number(inicio_input.value)
+        var fim = Number(fim_input.value)
+        if (inicio < 0 || inicio > 10 || fim > 10 || fim < 0 || inicio > fim) {
+            final.innerHTML = `Intervalo errado.`
+        }
+        else {
+            
+            for (var index = 0; index < vt_nome.length; index++) {
+                if (vt_nota[index] <= fim && vt_nota[index] >= inicio) {
+                    final.innerHTML += `O aluno ${vt_nome[index]} ficou com a nota ${vt_nota[index]}<br>`
+                    totAlu += 1
+
+                    if (vt_nota[index] > maior) {
+                        maior = vt_nota[index]
+                    }
+
+                    if (vt_nota[index] < menor) {
+                        menor = vt_nota[index]
+                    }
+                    soma += vt_nota[index]
+                    contMedia += 1
+
+                    var media = soma / contMedia
+                }
+                
+                
+            }
+            total.innerHTML = `Total de alunos registrados: ${vt_nome.length}
+                    Total de alunos listado: ${totAlu} (com nota no intervalo informado) <br>
+                    Maior Nota = ${maior} <br>
+                    Menor Nota = ${menor} <br>
+                    Média da Nota = ${media.toFixed(2)}`
+        }
+
+
+    }
+
+</script>
+
+
+<!-- 1.	Faça um ajuste no programa anterior para que a Prof. Alice possa: 
+a.	Na parte-1 cadastrar as notas das três Avaliações Continuadas;
+b.	Na parte-2 tenha dois botões, sendo que:
+i.	O primeiro botão irá fazer a pesquisa (descrita no ex.17) em todas as notas informadas (AC-1, AC-2 ou AC-3);
+ii.	O segundo botão irá fazer a pesquisa (descrita no ex.17) em somente uma das notas, que será informada pela 
+Prof. Alice em mais um campo que deverá estar nessa página. -->
+
+

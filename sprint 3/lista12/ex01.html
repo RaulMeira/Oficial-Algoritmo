@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    email: <input type="text" id="email" onkeyup="analisar()"> 
+    <br><br>
+    <span id="mostrar"></span>
+</body>
+</html>
+<!-- onkeyup = qnd entrar o campo -->
+
+<script>
+    function analisar() {
+        var emailOK = email.value.indexOf('@')
+        if (emailOK == true) {
+            mostrar.innerHTML = `email válido`
+        }
+        else {
+            mostrar.innerHTML = `email invalido`
+        }
+    }
+
+</script>
+
+
+

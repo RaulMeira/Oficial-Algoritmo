@@ -12,6 +12,8 @@
     <button onclick="anal()">Analisar Histórico</button>
     <br>
     <span id="msg"></span>
+    <br>
+    <span id="final"></span>
 </body>
 </html>
 
@@ -30,12 +32,14 @@
         if (num < menor) {
             menor = num
         }
+        msg.innerHTML = ``
         for (var index = 1; index <= vt_num.length; index++) {
             
-            msg.innerHTML = `${index}º Número: ${vt_num[index - 1]}<br>
+            msg.innerHTML += `${index}º Número: ${vt_num[index - 1]}<br>`
+            final.innerHTML = `
             Maior: ${maior} <br>
-            Menor: ${menor} <br>
-        `
+            Menor: ${menor} <br>`
+        
         }
         
     }
