@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula-final</title>
+</head>
+
+<body>
+    <input type="text" id="num1_ipt">
+    <input type="text" id="num2_ipt" onchange="ver()">
+    <br>
+    <span id="msg"></span>
+</body>
+
+</html>
+
+<script>
+    var vt_num1 = []
+    var vt_num2 = []
+    var vt_result = []
+    var menor = 0
+
+    function ver() {
+
+        var num1 = Number(num1_ipt.value)
+        var num2 = Number(num2_ipt.value)
+
+        vt_num1.push(num1)
+        vt_num2.push(num2)
+
+        for (var index_num1 = 0; index_num1 < vt_num1.length; index_num1++) {
+
+            for (var index_num2 = 0; index_num2 < vt_num2.length; index_num2++) {
+
+                if (vt_num1[index_num1] < vt_num2[index_num2]) {
+                    menor = vt_num1[index_num1]
+                    vt_result.push(vt_num1[index_num1])
+                }
+
+                else if (vt_num2[index_num2] < vt_num1[index_num1]) {
+                    menor = vt_num2[index_num2]
+                    vt_result.push(vt_num2[index_num2])
+                }
+
+            }
+
+        }
+
+        msg.innerHTML += `${vt_result}<br>`
+
+
+    }
+
+
+</script>
