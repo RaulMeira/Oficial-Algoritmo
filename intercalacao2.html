@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intercalacao</title>
+</head>
+
+<body>
+
+    <h2>algoritmo de intercalacao</h2>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+
+<script>
+
+    var vet1 = [2, 4, 6, 8]
+    var vet2 = [1, 2, 3, 4, 8, 9, 10, 11]
+    var vet3 = []
+
+    var i1 = 0
+    var i2 = 0
+
+    while (i1 < vet1.length || i2 < vet2.length) {
+
+        if (i1 >= vet1.length) {
+
+            while (i2 < vet2.length) {
+                vet3.push(vet2[i2])
+                i2++
+            }
+            break
+        }
+
+        if (i2 == vet2.length) {
+
+            while (i2 < vet1.length) {
+                vet3.push(vet1[i1])
+                i1++
+            }
+            break
+        }
+
+        else {
+
+            if (vet1[i1] < vet2[i2]) {
+                vet3.push(vet1[i1])
+                i1 += 1
+            }
+
+            else {
+                vet3.push(vet2[i2])
+                i2 += 1
+            }
+        }
+
+    }
+
+    div_msg.innerHTML = vet3 + '<br>' + vet1 + '<br>' + vet2
+</script>
